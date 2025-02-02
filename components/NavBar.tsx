@@ -5,6 +5,8 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { IoMdSearch } from "react-icons/io";
 import Logo from "./Logo.png";
 import Image from 'next/image';
+import Link from 'next/link';
+
 
 const NavBar = () => {
     const [selectedLanguage, setSelectedLanguage] = useState<'ENG' | 'JAP'>('ENG');
@@ -17,13 +19,15 @@ const NavBar = () => {
         <div className="h-16 bg-[#1c1c1c] flex items-center justify-between px-4 md:px-8 text-white">
             <div className="flex items-center space-x-4">
                 <FiAlignJustify size={32} />
-            </div>
+            </div> 
             <div className="h-10 pl-12 ">
+                <Link href="/home">
                 <Image
                     src={Logo}
                     alt="Logo"
                     className="h-10 rounded-xl object-contain"
                 />
+                </Link>
             </div>
             <div className=" relative pl-1 sm:pl-16 w-11/12 flex flex-grow">
                 <input

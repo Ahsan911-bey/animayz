@@ -1,5 +1,6 @@
 "use client";
 import React,{useState,useEffect} from "react";
+import Link from "next/link";
 
 const images =[
     {
@@ -38,10 +39,12 @@ const HeroSection=() =>{
                 <p className="text-sm mb-4 md:text-xl text-white">Discover your favorite Anime and start Watching Now</p>
                 </div>
                 <div className="w-full flex justify-center sm:justify-start">
+                    <Link href={`/WatchNow`}>
                 <button
                className="bg-purple-800 px-5 py-1 rounded-md text-2xl text-white hover:bg-purple-700 transition md:px-10 md:py-2 md:text-3xl"
-               >PLAY NOW
+               >WATCH NOW
                </button>
+               </Link>
                </div>
             </div>
             <div className="relative h-80 md:w-1/2 md:h-auto">

@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import { IoPlay } from "react-icons/io5";
 import TopA from "./TopA";
+import Link from 'next/link';
 
 
 
@@ -59,6 +60,7 @@ const AnimeGrid: React.FC = () =>{
         <div className='flex gap-4 2xl:gap-7 bg-black'>
             <div className='grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5  gap-4'>
                 {AnimeList.map((anime) =>(
+                    <Link key={anime.id} href={`/about/${anime.id}`}>
                     <div key={anime.id} className='group relative mt-4 ml-2 shadow-inner overflow-hidden transition ease-in-out hover:scale-105 duration-300'>
                         <img src={anime.image} alt={anime.title} className=' object-cover rounded-lg 2xl:h-80 w-52' />
                         <div className='group-hover:opacity-60 absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-55'></div>
@@ -76,6 +78,7 @@ const AnimeGrid: React.FC = () =>{
                             <IoPlay size={50} />
                             </div>
                     </div>
+                    </Link>
                 ))}
             </div>
 
@@ -85,3 +88,8 @@ const AnimeGrid: React.FC = () =>{
     )
 }
 export default AnimeGrid;
+
+
+
+
+
