@@ -4,58 +4,12 @@ import axios from 'axios';
 import { IoPlay } from "react-icons/io5";
 import TopA from "./TopA";
 import Link from 'next/link';
+import { useAnimeData } from './AnimeContext';
 
 
-
-interface Anime{
-    id:string;
-    title:string;
-    image:string;
-    duration:string;
-    jname:string;
-    type:string;
-    nsfw:boolean;
-    sub:number;
-    dub:number;
-    episodes:number;
-
-}
 
 const AnimeGrid: React.FC = () =>{
-    const [AnimeList , setAnimeList] = useState<Anime[]>([]);
-    const [error , setError] = useState<string | null>(null);
-
-    useEffect(() => {
-        const fetchAnimeList = async() =>{
-            try{
-                const response = await axios.get("http://127.0.0.1:3001/api/most-popular?page=2");
-                const data = response.data;
-                const formattedData = data.map((anime:Anime) =>({
-                    id:anime.id,
-                    title:anime.title,
-                    image:anime.image,
-                    duration:anime.duration,
-                    jname:anime.jname,
-                    type:anime.type,
-                    nsfw:anime.nsfw,
-                    sub:anime.sub,
-                    dub:anime.dub,
-                    episodes:anime.episodes,
-                }));
-                setAnimeList(formattedData);
-            }
-            catch(error){
-                console.error("THERE WAS AN ERROR FETCHING DATA FROM API 1",error);
-                setError('THERE IS AN ERROR FETCHING DATA FROM API 2');
-            }
-        };
-        fetchAnimeList();
-    }, []);
-       
-    if(error){
-        return <div>{error}</div>;
-    }
-
+    const AnimeList = useAnimeData();
     return(
         <div className='flex gap-4 2xl:gap-7 bg-black'>
             <div className='grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5  gap-4'>

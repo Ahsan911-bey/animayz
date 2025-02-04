@@ -7,14 +7,6 @@ const Footer = () => {
     return (
         <div className="mt-20 relative bg-black">
             <div className="relative">
-                <div className='hidden md:block'>
-                <Image
-                    src={FooterImg3}
-                    alt="FooterImg"
-                    objectFit="cover"
-                    layout="responsive"
-                />
-                </div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 min-h-[15rem] md:min-h-[20rem]">
                     <div className="hidden md:block">
                         <h2 className="text-3xl font-bold text-white">A-Z List</h2>
