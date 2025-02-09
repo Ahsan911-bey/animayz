@@ -6,14 +6,28 @@ import { IoMdSearch } from "react-icons/io";
 import Logo from "./Logo.png";
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { useRouter } from 'next/navigation'
 
 const NavBar = () => {
     const [selectedLanguage, setSelectedLanguage] = useState<'ENG' | 'JAP'>('ENG');
+    const [searchQuery,setSearchQuery] = useState('');
+    const router = useRouter();
+
+    const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) =>{
+        if(event.key === 'Enter'){
+            handleSearch();
+        }
+    }
+    const handleSearch = () =>{
+       if(searchQuery.trim() !== ''){
+            router.push(`/Search?q=${encodeURIComponent(searchQuery)}`)
+       }
+    }
 
     const LangBtnHandler = (language: 'ENG' | 'JAP') => {
         setSelectedLanguage(language);
     };
+
 
     return (
         <div className="h-16 bg-[#1c1c1c] flex items-center justify-between px-4 md:px-8 text-white">
@@ -34,8 +48,11 @@ const NavBar = () => {
                     type="text"
                     placeholder="  Search..."
                     className="bg-[#141414] pl-5 w-full rounded-md h-8 md:w-1/2"
+                    value={searchQuery}
+                    onChange={(e) =>setSearchQuery(e.target.value)}
+                    onKeyDown={handleKeyPress}
                  />
-                <button className="absolute top-1 "><IoMdSearch size={24} /></button>
+                <button className="absolute top-1" onClick={handleSearch}><IoMdSearch size={24} /></button>
             </div>
             <div className="pl-44 hidden md:flex">
                 <button
