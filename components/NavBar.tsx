@@ -12,6 +12,11 @@ const NavBar = () => {
     const [selectedLanguage, setSelectedLanguage] = useState<'ENG' | 'JAP'>('ENG');
     const [searchQuery,setSearchQuery] = useState('');
     const router = useRouter();
+    const [isOpen,setIsOpen] = useState(false);
+    const [isOpenAbout,setIsOpenAbout] = useState(false);
+    const [isOpenGenres,setIsOpenGenres] = useState(false);
+    const [isOpenType,setIsOpenType] = useState(false);
+    const [isOpenYear,setIsOpenYear] = useState(false);
 
     const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) =>{
         if(event.key === 'Enter'){
@@ -31,9 +36,115 @@ const NavBar = () => {
 
     return (
         <div className="h-16 bg-[#1c1c1c] flex items-center justify-between px-4 md:px-8 text-white">
-            <div className="flex items-center space-x-4">
-                <FiAlignJustify size={32} />
-            </div> 
+                <div className="relative flex items-center space-x-4 cursor-pointer"
+                onMouseEnter={() => setIsOpen(true)}
+                onMouseLeave={() => setIsOpen(false)}
+                >
+                    <FiAlignJustify size={32} />
+
+                    {isOpen && (
+                        <div className=" absolute w-20 py-8 bg-[#1c1c1c] top-7 -left-10 z-50 rounded-md overflow-hidden">
+                            <ul className="w-full flex justify-center items-center flex-col">
+                                <div onMouseEnter={() => setIsOpenAbout(true)} onMouseLeave={() => setIsOpenAbout(false)} className=" w-full">
+                                <li className="text-gray-600 cursor-pointer mt-2 w-full flex justify-center items-center">About</li>
+                                </div>
+                                <div onMouseEnter={() => setIsOpenGenres(true)} onMouseLeave={() => setIsOpenGenres(false)}  className=" w-full">
+                                <li className="text-slate-600 cursor-pointer mt-2 w-full flex justify-center items-center">Genres</li>
+                                </div>
+                                <div onMouseEnter={() => setIsOpenType(true)} onMouseLeave={() => setIsOpenType(false)}  className=" w-full">
+                                <li className="text-slate-600 cursor-pointer mt-2 w-full flex justify-center items-center">Type</li>
+                                </div>
+                                <div onMouseEnter={() => setIsOpenYear(true)} onMouseLeave={() => setIsOpenYear(false)}  className=" w-full">
+                                <li className="text-slate-600 cursor-pointer mt-2 w-full flex justify-center items-center">Year</li>
+                                </div>
+                            </ul>
+                        </div>
+                    )}
+                    {isOpenAbout && (
+                        <div className="absolute px-8 py-8 bg-zinc-900 top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenAbout(true)} onMouseLeave={() => setIsOpenAbout(false)}>
+                            <ul>
+                                <div >
+                                <li className="text-gray-600 cursor-pointer mt-2">About</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2">About</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2">About</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2">About</li>
+                                </div>
+                            </ul>
+                        </div>
+                    )}
+                    {isOpenGenres && (
+                        <div className="absolute px-8 py-8 bg-zinc-900 top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenGenres(true)} onMouseLeave={() => setIsOpenGenres(false)}>
+                            <ul>
+                                <div >
+                                <li className="text-gray-600 cursor-pointer mt-2">Genres</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2">Genres</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2">Genres</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2">Genres</li>
+                                </div>
+                            </ul>
+                        </div>
+                    )}
+                     {isOpenType && (
+                        <div className="absolute px-8 py-8 bg-zinc-900 top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenType(true)} onMouseLeave={() => setIsOpenType(false)}>
+                            <ul>
+                                <div >
+                                <li className="text-gray-600 cursor-pointer mt-2">Type</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2">Type</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2">Type</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2">Type</li>
+                                </div>
+                            </ul>
+                        </div>
+                    )}
+                      {isOpenYear && (
+                        <div className="absolute px-8 py-8 bg-[#0F0F0F] top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenYear(true)} onMouseLeave={() => setIsOpenYear(false)}>
+                            <ul className="text-sm">
+                                <div >
+                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1947</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1960</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1965</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1969</li>
+                                </div>
+                                <div >
+                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1973</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1977</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
+                                </div>
+                            </ul>
+                        </div>
+                    )}
+                </div>
             <div className="h-10 pl-12 ">
                 <Link href="/home">
                 <Image
