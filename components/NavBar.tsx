@@ -116,32 +116,112 @@ const NavBar = () => {
                     )}
                       {isOpenYear && (
                         <div className="absolute px-8 py-8 bg-[#0F0F0F] top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenYear(true)} onMouseLeave={() => setIsOpenYear(false)}>
+                            <div className="flex flex-row gap-16">
                             <ul className="text-sm">
-                                <div >
+                                <Link href={`/released-year/2020`}><div >
                                 <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1947</li>
-                                </div>
-                                <div >
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
                                 <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1960</li>
-                                </div>
-                                <div >
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
                                 <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1965</li>
-                                </div>
-                                <div >
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
                                 <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1969</li>
-                                </div>
-                                <div >
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
                                 <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1973</li>
-                                </div>
-                                <div >
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
                                 <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1977</li>
-                                </div>
-                                <div >
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
                                 <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
-                                </div>
-                                <div >
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
                                 <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
-                                </div>
+                                </div></Link>
                             </ul>
+                            <ul className="text-sm">
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1947</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1960</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1965</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1969</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1973</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1977</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
+                                </div></Link>
+                            </ul>
+                            <ul className="text-sm">
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1947</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1960</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1965</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1969</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1973</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1977</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
+                                </div></Link>
+                            </ul>
+                            <ul className="text-sm">
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1947</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1960</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1965</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1969</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1973</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1977</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
+                                </div></Link>
+                                <Link href={`/released-year/2020`}><div >
+                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
+                                </div></Link>
+                            </ul>
+                            </div>
                         </div>
                     )}
                 </div>
