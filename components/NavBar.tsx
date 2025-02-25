@@ -7,16 +7,21 @@ import Logo from "./Logo.png";
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'
+import { X } from "lucide-react";
+import { FaArrowRight } from "react-icons/fa";
+
 
 const NavBar = () => {
     const [selectedLanguage, setSelectedLanguage] = useState<'ENG' | 'JAP'>('ENG');
     const [searchQuery,setSearchQuery] = useState('');
     const router = useRouter();
+    const [isOpenSignin, setIsOpenSignin] = useState(false);
     const [isOpen,setIsOpen] = useState(false);
     const [isOpenAbout,setIsOpenAbout] = useState(false);
     const [isOpenGenres,setIsOpenGenres] = useState(false);
     const [isOpenType,setIsOpenType] = useState(false);
     const [isOpenYear,setIsOpenYear] = useState(false);
+    const [isSigninBtnPressed,setisSigninBtnPressed] = useState(false);
 
     const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) =>{
         if(event.key === 'Enter'){
@@ -264,12 +269,72 @@ const NavBar = () => {
                 </button>
             </div>
             <div className="ml-52 hidden md:flex">
-                <button
-                    className="bg-purple-800 w-auto mr-4 h-auto whitespace-nowrap flex items-center justify-center py-1 px-7 font-normal text-white rounded-md ml-3 transition-all hover:bg-purple-700"
-                >
-                    Sign in <FaArrowRightLong className="ml-2" />
-                </button>
+        <button
+          className="bg-purple-800 w-auto mr-4 h-auto whitespace-nowrap flex items-center justify-center py-1 px-7 font-normal text-white rounded-md ml-3 transition-all hover:bg-purple-700"
+          onClick={(e) => {
+            e.stopPropagation(); // Prevent event bubbling
+            setIsOpenSignin((prev) => !prev);
+        }}
+        >
+          Sign in <FaArrowRightLong className="ml-2" />
+        </button>
+      </div>
+
+      {isOpenSignin && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ">
+          <div className="bg-black text-gray-300 p-6 rounded-2xl shadow-lg w-96 relative border-[2px] border-[#27272a]">
+            <button
+              onClick={() =>{ 
+                setIsOpenSignin(false); 
+                setisSigninBtnPressed(false); }}
+              className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
+            >
+              <X size={24} />
+            </button>
+            <div className="gap-3 mb-10">
+            <h2 className="text-xl font-bold mb-4">Welcome to AniMaze<br /></h2>
+            <p className="text-sm">Login to AniMayz if you can because we don't have a login flow yet</p>
             </div>
+            <div className="space-y-3">
+                <div className="flex flex-row gap-3">
+                    <div className="space-y-1">
+                        <p className="text-white">First name</p>
+                        <input type="text" placeholder="  Ahsan" className="w-36 p-2 text-sm border-2 border-[#232326] rounded-md mb-3 bg-[#27272a]" />
+                    </div>
+                    <div className="space-y-1">
+                    <p className="text-white">Last name</p>
+                    <input type="text" placeholder="  bey" className="w-44 p-2 text-sm border-2 border-[#232326] rounded-md mb-3 bg-[#27272a]" />
+                    </div>
+                </div>
+                <div className="space-y-1">
+                    <p className="text-white">Email Address</p>
+                    <input type="mail" placeholder="thenightmare99xx@gmail.com" className="p-2 w-full text-sm border-2 border-[#232326] rounded-md mb-3 bg-[#27272a]" />
+                </div>
+                <div className="space-y-1">
+                    <p className="text-white">Password</p>
+                    <input type="mail" placeholder="   ........." className="p-2 w-full border-2 border-[#232326] rounded-md mb-3 bg-[#27272a]" />
+                </div>
+                <div className="space-y-1">
+                    <p className="text-white">Confirm Password</p>
+                    <input type="mail" placeholder="   ........." className="p-2 w-full border-2 border-[#232326] rounded-md mb-3 bg-[#27272a]" />
+                </div>
+                
+            </div>
+                <div className="mt-10">
+                <button 
+                onClick={() => setisSigninBtnPressed(true)}
+                className="w-full  flex flex-row gap-2 justify-center bg-purple-700 text-white py-2 rounded-md transition-all hover:bg-purple-600">Sign Up <FaArrowRight className="mt-1" />    </button>
+                </div>
+                <div>
+          {isSigninBtnPressed && (
+            <div className="flex justify-center items-center mt-4">
+            <p className="text-white">We don't have a login flow yet</p>
+            </div>
+          )}
+          </div>
+          </div>
+        </div>
+      )}
         </div>
     );
 };

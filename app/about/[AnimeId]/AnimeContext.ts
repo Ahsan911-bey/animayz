@@ -33,17 +33,15 @@ type Character = {
     voiceActor: VoiceActor;
 };
 
-type Recommendation = {
-    id: string;
-    title: string;
-    image: string;
-    duration: string;
-    jname: string;
-    type: string;
-    nsfw: boolean;
-    sub: number;
-    dub: number;
-    episodes : number;
+type recommendations = {
+        alID: number;
+        zoroId: string;
+        romaji: string;
+        english: string;
+        coverImage: string;
+        episodes: number;
+        status: string;
+        format: string;
 };
 
 
@@ -70,7 +68,7 @@ type AnimeData = {
     producers: string[];
     seasons: Season[];
     characters: Character[];
-    recommendations: Recommendation[];
+    recommendations: recommendations[];
     subOrDub: string; 
     hasSub: boolean;
     hasDub: boolean; 

@@ -22,7 +22,7 @@ const AnimeGrid: React.FC = () => {
     <div>
       <ColourText />
       <div className="flex gap-4 2xl:gap-7 bg-black">
-        <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2 2xl:gap-4 2xl:ml-10">
           {AnimeList.map((anime) => (
             <Link key={anime.id} href={`/about/${anime.id}`}>
               <div className="group relative mt-4 ml-2 shadow-inner overflow-hidden transition ease-in-out hover:scale-105 duration-300">

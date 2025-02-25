@@ -93,22 +93,18 @@ export default function AnimePage(){
                 </div>
                 <h2 className="text-white text-2xl font-bold ml-2 mt-2">Recommended Animes:</h2>
                 <div className="flex gap-4 2xl:gap-7 bg-black">
-                    <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5  gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2 2xl:gap-4 2xl:ml-10">
                     {animeData.recommendations.map((anime) => (
-                     <Link key={anime.id} href={`/about/${anime.id}`}>
-                     <div key={anime.id} className='group relative mt-4 ml-2 shadow-inner overflow-hidden transition ease-in-out hover:scale-105 duration-300'>
-                         <img src={anime.image} alt={anime.title} className=' object-cover rounded-lg 2xl:h-80 w-52' />
+                     <Link key={anime.zoroId} href={`/about/${anime.zoroId}`}>
+                     <div key={anime.zoroId} className='group relative mt-4 ml-2 shadow-inner overflow-hidden transition ease-in-out hover:scale-105 duration-300'>
+                         <img src={anime.coverImage} alt={anime.romaji} className=' object-cover rounded-lg 2xl:h-80 w-52' />
                          <div className='group-hover:opacity-60 absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-55'></div>
                              <div className='absolute bottom-0 left-2 drop-shadow-2xl -translate-y-1 p-2 '>
-                                 <p className='text-white font-bold line-clamp-2'>{anime.title}</p>
+                                 <p className='text-white font-bold line-clamp-2'>{anime.english}</p>
                                  <div className='flex items-center text-xs text-gray-300 gap-2'>
-                                     <span className='bg-purple-500 px-2 py-0.5 rounded-sm'>{anime.type}</span>
-                                     <span>{anime.duration}</span>
+                                     <span className='bg-purple-500 px-2 py-0.5 rounded-sm'>{anime.format}</span>
                                  </div>
                              </div>
-                             {anime.nsfw && (
-                                 <div className='absolute bg-red-500 top-1 left-2 px-1 py-0.5 rounded-md text-sm text-white font-bold'>18+</div>
-                             )}
                              <div className='hidden group-hover:block absolute top-32 left-24 bg-purple-600 rounded-3xl text-white'>
                              <IoPlay size={50} />
                              </div>

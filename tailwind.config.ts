@@ -12,8 +12,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: { // Place screens inside theme.extend
+        '2xl': '1580px',
+      },
     },
   },
   plugins: [],
 };
+
 export default config;

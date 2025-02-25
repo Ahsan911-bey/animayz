@@ -15,10 +15,10 @@ export interface Anime {
 
 export const getAnimeList = async (): Promise<Anime[]> => {
   try {
-    const response = await axios.get("http://127.0.0.1:3001/api/most-popular?page=1");
+    const response = await axios.get("https://cdn.aniwave.lat/https://v2.zoro.mom/zoro//most-popular?page=1");
     const data = response.data;
 
-    return data.map((anime: Anime) => ({
+    return data.results.map((anime: Anime) => ({
       id: anime.id,
       title: anime.title,
       image: anime.image,

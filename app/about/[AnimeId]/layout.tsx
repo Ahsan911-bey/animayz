@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { AnimeProvider } from "./AnimeProvider";
 
 async function fetchAnimeData(animeid: string) {
-    const res = await fetch(`https://api.hi-anime.site/api/info?id=${animeid}`, {
+    const res = await fetch(`https://cdn.aniwave.lat/https://v2.zoro.mom/zoro/info?id=${animeid}`, {
         cache: "no-store",
     });
     if (!res.ok) {
