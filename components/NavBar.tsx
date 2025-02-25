@@ -87,16 +87,22 @@ const NavBar = () => {
                         <div className="absolute px-8 py-8 bg-zinc-900 top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenGenres(true)} onMouseLeave={() => setIsOpenGenres(false)}>
                             <ul>
                                 <div >
-                                <li className="text-gray-600 cursor-pointer mt-2">Genres</li>
+                                <li className="text-gray-600 cursor-pointer mt-2">Action</li>
                                 </div>
                                 <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">Genres</li>
+                                <li className="text-slate-600 cursor-pointer mt-2">Adventure</li>
                                 </div>
                                 <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">Genres</li>
+                                <li className="text-slate-600 cursor-pointer mt-2">Comedy</li>
                                 </div>
                                 <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">Genres</li>
+                                <li className="text-slate-600 cursor-pointer mt-2">Drama</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2">Fantasy Horror</li>
+                                </div>
+                                <div >
+                                <li className="text-slate-600 cursor-pointer mt-2">Mystery</li>
                                 </div>
                             </ul>
                         </div>
