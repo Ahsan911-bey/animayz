@@ -1,6 +1,5 @@
 "use client";
-import {useState, useEffect} from 'react';
-import axios from 'axios';
+
 import { IoPlay } from "react-icons/io5";
 import TopA from "./TopA";
 import Link from 'next/link';

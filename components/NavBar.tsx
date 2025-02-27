@@ -40,7 +40,7 @@ const NavBar = () => {
 
 
     return (
-        <div className="h-16 bg-[#1c1c1c] flex items-center justify-between px-4 md:px-8 text-white">
+        <div className="h-16 bg-[#1c1c1c] flex items-center justify-between px-4 w-full md:px-8 text-white">
                 <div className="relative flex items-center space-x-4 cursor-pointer"
                 onMouseEnter={() => setIsOpen(true)}
                 onMouseLeave={() => setIsOpen(false)}
@@ -48,7 +48,7 @@ const NavBar = () => {
                     <FiAlignJustify size={32} />
 
                     {isOpen && (
-                        <div className=" absolute w-20 py-8 bg-[#1c1c1c] top-7 -left-10 z-50 rounded-md overflow-hidden">
+                        <div className=" absolute w-24 py-8 bg-[#1c1c1c] top-7 -left-10 z-50 rounded-md overflow-hidden">
                             <ul className="w-full flex justify-center items-center flex-col">
                                 <div onMouseEnter={() => setIsOpenAbout(true)} onMouseLeave={() => setIsOpenAbout(false)} className=" w-full">
                                 <li className="text-gray-600 cursor-pointer mt-2 w-full flex justify-center items-center">About</li>
@@ -87,22 +87,25 @@ const NavBar = () => {
                         <div className="absolute px-8 py-8 bg-zinc-900 top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenGenres(true)} onMouseLeave={() => setIsOpenGenres(false)}>
                             <ul>
                                 <div >
-                                <li className="text-gray-600 cursor-pointer mt-2">Action</li>
+                               <Link href={`/Search?genre=Action`}><li className="text-gray-600 cursor-pointer mt-2">Action</li></Link> 
                                 </div>
                                 <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">Adventure</li>
+                                <Link href={`/Search?genre=Adventure`}><li className="text-slate-600 cursor-pointer mt-2">Adventure</li></Link>
                                 </div>
                                 <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">Comedy</li>
+                                <Link href={`/Search?genre=Comedy`}> <li className="text-slate-600 cursor-pointer mt-2">Comedy</li></Link>
                                 </div>
                                 <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">Drama</li>
+                                <Link href={`/Search?genre=Drama`}><li className="text-slate-600 cursor-pointer mt-2">Drama</li></Link>
                                 </div>
                                 <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">Fantasy Horror</li>
+                                <Link href={`/Search?genre=Horror`}><li className="text-slate-600 cursor-pointer mt-2">Horror</li></Link>
                                 </div>
                                 <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">Mystery</li>
+                                <Link href={`/Search?genre=Fantasy`}><li className="text-slate-600 cursor-pointer mt-2">Fantasy</li></Link>
+                                </div>
+                                <div >
+                                <Link href={`/Search?genre=Mystery`}><li className="text-slate-600 cursor-pointer mt-2">Mystery</li></Link>
                                 </div>
                             </ul>
                         </div>
@@ -110,131 +113,79 @@ const NavBar = () => {
                      {isOpenType && (
                         <div className="absolute px-8 py-8 bg-zinc-900 top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenType(true)} onMouseLeave={() => setIsOpenType(false)}>
                             <ul>
-                                <div >
-                                <li className="text-gray-600 cursor-pointer mt-2">Type</li>
+                            <div >
+                               <Link href={`/Search?type=TV`}><li className="text-gray-600 cursor-pointer mt-2">TV</li></Link> 
                                 </div>
                                 <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">Type</li>
+                                <Link href={`/Search?type=ONA`}><li className="text-slate-600 cursor-pointer mt-2">ONA</li></Link>
                                 </div>
                                 <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">Type</li>
+                                <Link href={`/Search?type=ONA`}> <li className="text-slate-600 cursor-pointer mt-2">OVA</li></Link>
                                 </div>
                                 <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">Type</li>
+                                <Link href={`/Search?type=Movie`}><li className="text-slate-600 cursor-pointer mt-2">Movie</li></Link>
                                 </div>
                             </ul>
                         </div>
                     )}
                       {isOpenYear && (
-                        <div className="absolute px-8 py-8 bg-[#0F0F0F] top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenYear(true)} onMouseLeave={() => setIsOpenYear(false)}>
-                            <div className="flex flex-row gap-16">
-                            <ul className="text-sm">
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1947</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1960</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1965</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1969</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1973</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1977</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
-                                </div></Link>
-                            </ul>
-                            <ul className="text-sm">
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1947</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1960</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1965</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1969</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1973</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1977</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
-                                </div></Link>
-                            </ul>
-                            <ul className="text-sm">
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1947</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1960</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1965</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1969</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1973</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1977</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
-                                </div></Link>
-                            </ul>
-                            <ul className="text-sm">
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1947</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1960</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1965</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1969</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1973</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1977</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
-                                </div></Link>
-                                <Link href={`/released-year/2020`}><div >
-                                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1981</li>
-                                </div></Link>
-                            </ul>
-                            </div>
-                        </div>
-                    )}
+    <div className="absolute px-8 py-8 bg-[#0F0F0F] top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenYear(true)} onMouseLeave={() => setIsOpenYear(false)}>
+        <div className="flex flex-row gap-16">
+            <ul className="text-sm">
+                <Link href={`/Search?type=all&year=2019&genre=all`}><div>
+                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">2024</li>
+                </div></Link>
+                <div>
+                <Link href={`/Search?year=2023`}><li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">2023</li></Link>
+                </div>
+                <Link href={`/Search?year=2022`}><div>
+                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">2022</li>
+                </div></Link>
+                <Link href={`/Search?year=2021`}><div>
+                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">2021</li>
+                </div></Link>
+                <Link href={`/Search?year=2020`}><div>
+                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">2020</li>
+                </div></Link>
+            </ul>
+            <ul className="text-sm">
+                <Link href={`/Search?year=2019`}><div>
+                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">2019</li>
+                </div></Link>
+                <Link href={`/Search?year=2018`}><div>
+                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">2018</li>
+                </div></Link>
+                <Link href={`/Search?year=2017`}><div>
+                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">2017</li>
+                </div></Link>
+                <Link href={`/Search?year=2016`}><div>
+                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">2016</li>
+                </div></Link>
+                <Link href={`/Search?year=2015`}><div>
+                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">2015</li>
+                </div></Link>
+            </ul>
+            <ul className="text-sm">
+                <Link href={`/Search?year=2010`}><div>
+                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">2010</li>
+                </div></Link>
+                <Link href={`/Search?year=2005`}><div>
+                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">2005</li>
+                </div></Link>
+                <Link href={`/Search?year=2000`}><div>
+                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">2000</li>
+                </div></Link>
+                <Link href={`/Search?year=1995`}><div>
+                <li className="text-slate-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1995</li>
+                </div></Link>
+                <Link href={`/Search?year=1990`}><div>
+                <li className="text-gray-600 cursor-pointer mt-2 hover:rounded-lg hover:bg-[#1c1c1c] px-1 py-1">1990</li>
+                </div></Link>
+            </ul>
+        </div>
+    </div>
+)}
+
                 </div>
             <div className="h-10 pl-12 ">
                 <Link href="/home">
@@ -245,18 +196,20 @@ const NavBar = () => {
                 />
                 </Link>
             </div>
-            <div className=" relative pl-1 sm:pl-16 w-11/12 flex flex-grow">
+            <div className="relative w-full sm:w-11/12 flex flex-grow px-2">
                 <input
                     type="text"
-                    placeholder="  Search..."
-                    className="bg-[#141414] pl-5 w-full rounded-md h-8 md:w-1/2"
+                    placeholder="Search..."
+                    className="bg-[#141414] pl-5 w-full rounded-md h-10 sm:h-8"
                     value={searchQuery}
-                    onChange={(e) =>setSearchQuery(e.target.value)}
+                    onChange={(e) => setSearchQuery(e.target.value)}
                     onKeyDown={handleKeyPress}
-                 />
-                <button className="absolute top-1" onClick={handleSearch}><IoMdSearch size={24} /></button>
-            </div>
-            <div className="pl-44 hidden md:flex">
+                />
+                <button className="absolute right-3 top-1/2 transform -translate-y-1/2" onClick={handleSearch}>
+                    <IoMdSearch size={20} />
+                </button>
+                </div>
+            <div className="lg:pl-40 hidden lg:flex">
                 <button
                     onClick={() => LangBtnHandler('ENG')}
                     className={`w-7 h-6 font-mono rounded-l-md ${
