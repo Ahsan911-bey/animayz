@@ -9,19 +9,22 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation'
 import { X } from "lucide-react";
 import { FaArrowRight } from "react-icons/fa";
+import { IoIosInformationCircleOutline } from "react-icons/io";
+import imagehaha from "@/components/haha.jpg";
+
+
 
 
 const NavBar = () => {
-    const [selectedLanguage, setSelectedLanguage] = useState<'ENG' | 'JAP'>('ENG');
     const [searchQuery,setSearchQuery] = useState('');
     const router = useRouter();
     const [isOpenSignin, setIsOpenSignin] = useState(false);
     const [isOpen,setIsOpen] = useState(false);
-    const [isOpenAbout,setIsOpenAbout] = useState(false);
     const [isOpenGenres,setIsOpenGenres] = useState(false);
     const [isOpenType,setIsOpenType] = useState(false);
     const [isOpenYear,setIsOpenYear] = useState(false);
     const [isSigninBtnPressed,setisSigninBtnPressed] = useState(false);
+    const [isOpenAboutUs, setIsOpenAboutUs] = useState(false);
 
     const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) =>{
         if(event.key === 'Enter'){
@@ -34,9 +37,6 @@ const NavBar = () => {
        }
     }
 
-    const LangBtnHandler = (language: 'ENG' | 'JAP') => {
-        setSelectedLanguage(language);
-    };
 
 
     return (
@@ -50,9 +50,6 @@ const NavBar = () => {
                     {isOpen && (
                         <div className=" absolute w-24 py-8 bg-[#1c1c1c] top-7 -left-10 z-50 rounded-md overflow-hidden">
                             <ul className="w-full flex justify-center items-center flex-col">
-                                <div onMouseEnter={() => setIsOpenAbout(true)} onMouseLeave={() => setIsOpenAbout(false)} className=" w-full">
-                                <li className="text-gray-600 cursor-pointer mt-2 w-full flex justify-center items-center">About</li>
-                                </div>
                                 <div onMouseEnter={() => setIsOpenGenres(true)} onMouseLeave={() => setIsOpenGenres(false)}  className=" w-full">
                                 <li className="text-slate-600 cursor-pointer mt-2 w-full flex justify-center items-center">Genres</li>
                                 </div>
@@ -61,24 +58,6 @@ const NavBar = () => {
                                 </div>
                                 <div onMouseEnter={() => setIsOpenYear(true)} onMouseLeave={() => setIsOpenYear(false)}  className=" w-full">
                                 <li className="text-slate-600 cursor-pointer mt-2 w-full flex justify-center items-center">Year</li>
-                                </div>
-                            </ul>
-                        </div>
-                    )}
-                    {isOpenAbout && (
-                        <div className="absolute px-8 py-8 bg-zinc-900 top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenAbout(true)} onMouseLeave={() => setIsOpenAbout(false)}>
-                            <ul>
-                                <div >
-                                <li className="text-gray-600 cursor-pointer mt-2">About</li>
-                                </div>
-                                <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">About</li>
-                                </div>
-                                <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">About</li>
-                                </div>
-                                <div >
-                                <li className="text-slate-600 cursor-pointer mt-2">About</li>
                                 </div>
                             </ul>
                         </div>
@@ -196,38 +175,46 @@ const NavBar = () => {
                 />
                 </Link>
             </div>
-            <div className="relative w-full sm:w-11/12 flex flex-grow px-2">
-                <input
-                    type="text"
-                    placeholder="Search..."
-                    className="bg-[#141414] pl-5 w-full rounded-md h-10 sm:h-8"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    onKeyDown={handleKeyPress}
-                />
-                <button className="absolute right-3 top-1/2 transform -translate-y-1/2" onClick={handleSearch}>
-                    <IoMdSearch size={20} />
-                </button>
-                </div>
-            <div className="lg:pl-40 hidden lg:flex">
+            <div className="relative w-full flex flex-grow px-2">
+            <input
+                type="text"
+                placeholder="Search..."
+                className="bg-[#141414] pl-5 lg:w-96 w-32 md:w-56  rounded-md h-10 sm:h-8"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleKeyPress}
+            />
+            <button onClick={handleSearch} className="ml-2 bg-purple-600 rounded-md px-2 border-2 border-[#141414]">
+                <IoMdSearch size={20} />
+            </button>
+        </div>
+            <div className=" hidden xl:flex">
                 <button
-                    onClick={() => LangBtnHandler('ENG')}
-                    className={`w-7 h-6 font-mono rounded-l-md ${
-                        selectedLanguage === 'ENG' ? 'bg-gray-400 text-zinc-800' : 'bg-zinc-800 text-gray-500'
-                    }`}
+                onClick={(e) => {setIsOpenAboutUs(true)}}
+                className="bg-slate-600 p-2 flex flex-row text-nowrap rounded-md text-black"
                 >
-                    EN
-                </button>
-                <button
-                    onClick={() => LangBtnHandler('JAP')}
-                    className={`w-7 h-6 ml-px font-mono rounded-r-md ${
-                        selectedLanguage === 'JAP' ? 'bg-gray-400 text-zinc-800' : 'bg-zinc-800 text-gray-500'
-                    }`}
-                >
-                    JP
+                    <IoIosInformationCircleOutline size={25} className="mr-2" />  About Us
                 </button>
             </div>
-            <div className="ml-52 hidden md:flex">
+            {isOpenAboutUs && (
+                <div className=" inset-0 flex fixed justify-center items-center z-50 bg-black bg-opacity-50">
+                    <div className="relative w-96 h-[450px] flex-col flex bg-black rounded-xl border-[2px] border-[#27272a]">
+                                <button
+                        onClick={() =>{setIsOpenAboutUs(false)}}
+                        className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
+                        >
+                        <X size={24} />
+                        </button>
+                        <div className="flex justify-center">
+                        <h2 className="text-xl absolute top-5">That's None of Your Buisness Baby!</h2>
+                        </div>
+                        <div className="justify-center  flex">
+                        <Image src={imagehaha} alt="haha" height={100} width={250} className="absolute rounded-md top-20" />
+                        </div>
+                    </div>
+                </div>
+            )}
+            <div className="md:ml-20 hidden md:flex">
         <button
           className="bg-purple-800 w-auto mr-4 h-auto whitespace-nowrap flex items-center justify-center py-1 px-7 font-normal text-white rounded-md ml-3 transition-all hover:bg-purple-700"
           onClick={(e) => {
@@ -267,7 +254,7 @@ const NavBar = () => {
                 </div>
                 <div className="space-y-1">
                     <p className="text-white">Email Address</p>
-                    <input type="mail" placeholder="thenightmare99xx@gmail.com" className="p-2 w-full text-sm border-2 border-[#232326] rounded-md mb-3 bg-[#27272a]" />
+                    <input type="mail" placeholder="example@gmail.com" className="p-2 w-full text-sm border-2 border-[#232326] rounded-md mb-3 bg-[#27272a]" />
                 </div>
                 <div className="space-y-1">
                     <p className="text-white">Password</p>

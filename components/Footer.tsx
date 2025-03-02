@@ -110,8 +110,7 @@ const Footer = () => {
                     <p className="text-sm mt-2 text-white">
                         This site does not store any files on its server. All contents are provided by non-affiliated third parties.
                     </p>
-                    <p>This is just an info site</p>
-                    <p>Developed By Ahsan </p>
+                    <p className="text-sm mt-2 text-white">Developed By<strong className='text-purple-600'> Ahsan </strong></p>
                 </div>
             </div>
         </footer>

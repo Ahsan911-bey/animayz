@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { IoPlay } from "react-icons/io5";
-import TopA from "../../components/TopA";
+import TopA from "@/components/TopA";
 import Link from "next/link";
 import { ColourText } from "./ColorText";
 import { getAnimeList, Anime } from "./getAnimeList";

@@ -5,7 +5,7 @@ import { FaRegStar } from "react-icons/fa6";
 import { FaPlay } from "react-icons/fa";
 import Link from 'next/link';
 import { IoPlay } from "react-icons/io5";
-import TopA from "@/components/TopA";
+import TopA from "../../../components/TopA";
 
 
 
@@ -20,41 +20,41 @@ export default function AnimePage(){
     return(
         <div className="relative min-h-screen bg-black">
             <div className="relative bg-black h-[700px] md:h-[450px]">
-                    <div 
-                    className="absolute bg-cover bg-center inset-0"
-                    style={{
-                        backgroundImage: `url(${animeData.largeCover})`,
-                        backgroundColor: "#0a0a0a",
-                        filter: "blur(4px)",
-                        WebkitFilter: "blur(10px)",
-                    }}
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-[#09090b]" />
-                        <div className="absolute inset-0 bg-gradient-to-l from-[#09090b] via-transparent to-[#09090b]" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-[#09090b] via-transparent to-[#09090b]" />
+                <div 
+                className="absolute bg-cover bg-center inset-0"
+                style={{
+                    backgroundImage: `url(${animeData.image})`,
+                    backgroundColor: "#0a0a0a",
+                    filter: "blur(4px)",
+                    WebkitFilter: "blur(10px)",
+                }}
+                >
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-[#09090b]" />
+                    <div className="absolute inset-0 bg-gradient-to-l from-[#09090b] via-transparent to-[#09090b]" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#09090b] via-transparent to-[#09090b]" />
+                </div>
+                <div className="">
+                <div className="relative flex justify-left flex-row items-center gap-4 px-4 top-24">
+                <div className="h-44 w-48 ml-4">
+                    <img 
+                    className="min-h-full rounded-lg"
+                    src={animeData.image}
+                    alt={animeData.title}
+                    />
+                </div>
+                <div className="mt-20">
+                    <h1 className="text-4xl text-white font-bold">{animeData.title}</h1>
+                    <p className="text-gray-400 mt-1 text-sm">{animeData.jname}</p>
+                    <div className="flex mt-1">
+                        <p className="text-white mt-px mr-1 "><FaRegStar /></p>
+                    <p className="text-white font-bold text-sm mb-6">{animeData.rating}</p>
                     </div>
                     <div className="">
-                    <div className="relative flex justify-left flex-col md:flex-row  items-center gap-4 px-4 top-24">
-                            <div className="h-44 w-48 ml-4">
-                                <img 
-                                className="min-h-full rounded-lg"
-                                src={animeData.largeCover}
-                                alt={animeData.title}
-                                />
-                            </div>
-                            <div className="mt-20">
-                                <h1 className="text-4xl mt-12 text-white font-bold">{animeData.title}</h1>
-                                <p className="text-gray-400 mt-1 text-sm">{animeData.jname}</p>
-                                <div className="flex mt-1 justify-center">
-                                    <p className="text-white mt-px mr-1 "><FaRegStar /></p>
-                                <p className="text-white font-bold text-sm mb-6">{animeData.rating}</p>
-                                </div>
-                                <div className="flex justify-center">
-                                <button className="text-black bg-slate-50 px-4 py-2 font-medium rounded-xl flex"><FaPlay className="mt-1 mr-1"/>Play Now</button>
-                                </div>
+                    <button className="text-black bg-slate-50 px-4 py-2 font-medium rounded-xl flex"><FaPlay className="mt-1 mr-1"/>Play Now</button>
                     </div>
-                    </div>
-                    </div>
+                </div>
+                </div>
+                </div>
 
             </div>
         <div>
@@ -114,9 +114,7 @@ export default function AnimePage(){
   </Link>
 ))}
                     </div> 
-                    {animeData.recommendations.length > 0 && (
                     <TopA /> 
-                    )}
                 </div>           
                   
 

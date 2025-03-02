@@ -1,7 +1,7 @@
 "use client";
 
 import { IoPlay } from "react-icons/io5";
-import TopA from "./TopA";
+import TopA from "@/components/TopA";
 import Link from 'next/link';
 import { useAnimeData } from './AnimeContext';
 

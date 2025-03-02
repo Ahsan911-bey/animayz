@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import { AnimeProvider } from "./AnimeProvider";
-import { AnimeData } from "./AnimeContext";
+import { AnimeProvider } from "./unwanted/AnimeProvider";
+import { AnimeData } from "./unwanted/AnimeContext";
 
 async function fetchAnimeData(animeid: string): Promise<AnimeData> {
     const res = await fetch(`https://cdn.aniwave.lat/https://v2.zoro.mom/zoro/info?id=${animeid}`, {
