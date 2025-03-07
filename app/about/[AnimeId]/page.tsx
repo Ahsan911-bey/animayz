@@ -47,10 +47,10 @@ export default function AnimePage(){
                                 <p className="text-gray-400 mt-1 text-sm">{animeData.jname}</p>
                                 <div className="flex mt-1 justify-center">
                                     <p className="text-white mt-px mr-1 "><FaRegStar /></p>
-                                <p className="text-white font-bold text-sm mb-6">{animeData.rating}</p>
+                                <p className="flex justify-center sm:justify-start text-white font-bold text-sm mb-6">{animeData.rating}</p>
                                 </div>
-                                <div className="flex justify-center">
-                                <button className="text-black bg-slate-50 px-4 py-2 font-medium rounded-xl flex"><FaPlay className="mt-1 mr-1"/>Play Now</button>
+                                <div className="flex justify-center sm:justify-start">
+                                <Link href={`/watch/${animeData.id}-ep-${animeData.ep_id}`}><button className="text-black bg-slate-50 px-4 py-2 font-medium rounded-xl flex"><FaPlay className="mt-1 mr-1"/>Play</button></Link>
                                 </div>
                     </div>
                     </div>

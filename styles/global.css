@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: "Sigmar";
+    src: url("/fonts/Sigmar.woff2") format("woff2"); /* Make sure this matches your actual font file */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Titan One";
+    src: url("/fonts/Titan One.woff2") format("woff2"); /* Make sure this matches your actual font file */
+    font-weight: normal;
+    font-style: normal;
+}

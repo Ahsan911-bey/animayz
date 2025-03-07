@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        myfont: ["Sigmar", "sans-serif"], // Ensure sans-serif is added as fallback
+        myfont2: ["Titan One", "sans-serif"], // Corrected font name
+    },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

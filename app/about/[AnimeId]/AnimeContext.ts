@@ -50,6 +50,7 @@ export type AnimeData = {
   map(arg0: (anime: any) => import("react").JSX.Element): import("react").ReactNode;
   id: string;
   title: string;
+  ep_id: number;
   animeID: number;
   malID: number;
   alID: number;
@@ -75,6 +76,7 @@ export type AnimeData = {
   hasDub: boolean; 
   totalEpisodes: number;
   episodes: Episode[]; 
+  
 };
 
 export const AnimeContext = createContext<AnimeData | null>(null);
