@@ -21,7 +21,7 @@ type Season = {
 
 type VoiceActor = {
   name: string;
-  url: string;
+  id: string;
   image: string;
 };
 
@@ -31,7 +31,7 @@ type Character = {
   url: string;
   image: string;
   role: string;
-  voiceActor: VoiceActor;
+  voiceActor: VoiceActor[];
 };
 
 type recommendations = {

@@ -106,11 +106,10 @@ const Footer = () => {
                         height={50}
                         width={150}
                     />
-                    <p className="mt-4 text-white">Copyright © 2025 AniMAZE. All Rights Reserved.</p>
                     <p className="text-sm mt-2 text-white">
                         This site does not store any files on its server. All contents are provided by non-affiliated third parties.
                     </p>
-                    <p className="text-sm mt-2 text-white">Developed By<strong className='text-purple-600'> Ahsan </strong></p>
+                    <p className="text-sm mt-2 text-white">© AniMAZE™ | Designed by<strong className='text-purple-600'> Ahsan </strong></p>
                 </div>
             </div>
         </footer>

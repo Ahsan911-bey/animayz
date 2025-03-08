@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { AnimeProvider } from "./AnimeProvider";
 async function fetchAnimeData(){
-    const response= await fetch("https://cdn.aniwave.lat/https://v2.zoro.mom/zoro/top-airing?page=1");
+    const response= await fetch("https://cdn.aniwave.lat/https://v2.zoro.mom/zoro/most-popular?page=1");
     if (!response.ok){
         throw new Error("Error Fetching Data");
     }

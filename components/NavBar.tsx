@@ -26,6 +26,20 @@ const NavBar = () => {
     const [isSigninBtnPressed,setisSigninBtnPressed] = useState(false);
     const [isOpenAboutUs, setIsOpenAboutUs] = useState(false);
 
+    const toggleMenu = () => {
+        setIsOpen((prev) => !prev);
+    };
+    const toggleMenuGenres = () => {
+        setIsOpenGenres((prev) => !prev);
+    };
+    const toggleMenuType = () => {
+        setIsOpenType((prev) => !prev);
+    };
+    const toggleMenuYear = () => {
+        setIsOpenYear((prev) => !prev);
+    };
+
+
     const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) =>{
         if(event.key === 'Enter'){
             handleSearch();
@@ -42,21 +56,20 @@ const NavBar = () => {
     return (
         <div className="h-16 bg-[#1c1c1c] flex items-center justify-between px-4 w-full md:px-8 text-white">
                 <div className="relative flex items-center space-x-4 cursor-pointer"
-                onMouseEnter={() => setIsOpen(true)}
-                onMouseLeave={() => setIsOpen(false)}
+                onClick={toggleMenu}
                 >
                     <FiAlignJustify size={32} />
 
                     {isOpen && (
                         <div className=" absolute w-24 py-8 bg-[#1c1c1c] top-7 -left-10 z-50 rounded-md overflow-hidden">
                             <ul className="w-full flex justify-center items-center flex-col">
-                                <div onMouseEnter={() => setIsOpenGenres(true)} onMouseLeave={() => setIsOpenGenres(false)}  className=" w-full">
+                                <div onClick={toggleMenuGenres}className=" w-full">
                                 <li className="text-slate-600 cursor-pointer mt-2 w-full flex justify-center items-center">Genres</li>
                                 </div>
-                                <div onMouseEnter={() => setIsOpenType(true)} onMouseLeave={() => setIsOpenType(false)}  className=" w-full">
+                                <div onMouseEnter={toggleMenuType} className=" w-full">
                                 <li className="text-slate-600 cursor-pointer mt-2 w-full flex justify-center items-center">Type</li>
                                 </div>
-                                <div onMouseEnter={() => setIsOpenYear(true)} onMouseLeave={() => setIsOpenYear(false)}  className=" w-full">
+                                <div onMouseEnter={toggleMenuYear}  className=" w-full">
                                 <li className="text-slate-600 cursor-pointer mt-2 w-full flex justify-center items-center">Year</li>
                                 </div>
                             </ul>
