@@ -49,6 +49,8 @@ type recommendations = {
 export type AnimeData = {
   map(arg0: (anime: any) => import("react").JSX.Element): import("react").ReactNode;
   id: string;
+  image: String;
+  bannerImage: String;
   title: string;
   ep_id: number;
   animeID: number;

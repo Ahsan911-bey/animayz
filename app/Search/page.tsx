@@ -1,11 +1,10 @@
-"use client"; // ✅ Ensure this is the very first line
+import React from "react";
+import { SearchContent } from './Search';
+export default function Site() { // ✅ Make it async
 
-import {SearchContent} from "./Search";
-
-export default function SearchPage() {
-  return (
-    <div>
-      <SearchContent />
-    </div>
-  );
+    return (
+        <div className="bg-black">
+            <SearchContent />
+        </div>
+    );
 }

@@ -63,7 +63,7 @@ const NavBar = () => {
                         </div>
                     )}
                     {isOpenGenres && (
-                        <div className="absolute px-8 py-8 bg-zinc-900 top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenGenres(true)} onMouseLeave={() => setIsOpenGenres(false)}>
+                        <div className="absolute px-8 py-8 bg-[#0F0F0F] top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenGenres(true)} onMouseLeave={() => setIsOpenGenres(false)}>
                             <ul>
                                 <div >
                                <Link href={`/Search?genre=Action`}><li className="text-gray-600 cursor-pointer mt-2">Action</li></Link> 
@@ -90,7 +90,7 @@ const NavBar = () => {
                         </div>
                     )}
                      {isOpenType && (
-                        <div className="absolute px-8 py-8 bg-zinc-900 top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenType(true)} onMouseLeave={() => setIsOpenType(false)}>
+                        <div className="absolute px-8 py-8 bg-[#0F0F0F] top-7 left-10 z-50 rounded-md overflow-hidden" onMouseEnter={() => setIsOpenType(true)} onMouseLeave={() => setIsOpenType(false)}>
                             <ul>
                             <div >
                                <Link href={`/Search?type=TV`}><li className="text-gray-600 cursor-pointer mt-2">TV</li></Link> 

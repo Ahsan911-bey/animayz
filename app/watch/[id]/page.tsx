@@ -21,7 +21,7 @@ const WatchPage = () => {
 
       {/* Bottom Overlay */}
       <div className="absolute bottom-0 left-0 w-full h-36 bg-black"></div>
-      <div className="absolute left-0 top-0 h-full w-20 bg-black"></div>
+      <div className="hidden md:block absolute left-0 top-0 h-full w-20 bg-black"></div>
     </div>
   );
 };

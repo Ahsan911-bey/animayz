@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import axios from "axios";
 import { IoPlay } from "react-icons/io5";
-import TopA from "@/components/TopA";
 import Link from 'next/link';
+import Top10Client from "@/components/TopA/Top10Client"; 
+import { getTop10Data } from "@/components/TopA/Top10Data";
 
 interface AnimeResult {
   id: string;
@@ -21,7 +22,7 @@ export function SearchContent() {
   const [results, setResults] = useState<AnimeResult[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-
+  const [datafromtopA , setdatafromTopA] = useState(null)
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
@@ -34,6 +35,8 @@ export function SearchContent() {
 
   useEffect(() => {
     const fetchSearchResults = async () => {
+      const data = await getTop10Data();
+      setdatafromTopA(data);
       if (!q && !genre && !type && !year) {
         setResults([]);
         return;
@@ -115,7 +118,7 @@ export function SearchContent() {
                 ))}
             </div>
    
-            <TopA />
+            <Top10Client data={datafromtopA} /> 
                 
         </div>
         </div>
